@@ -122,6 +122,7 @@ public class Validation {
 	 /**
      * UC5: validating Password of a user with Rule1 - minimum of 8 characters.
      * UC6: validiting password of a user with Rule2 - password should have at least 1 Capital letter.
+     * UC7: validiting password of a user with Rule2 - password should have at least 1 numbers.
      * The pattern should for following conditions Matcher will match pattern
      * with user input.
      *
@@ -133,7 +134,7 @@ public class Validation {
         boolean matches = false;
 
         // defining pattern and matcher class for validation
-        Pattern pattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z]).{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$");
         Matcher matcher = pattern.matcher(user.getPassword());
         matches = matcher.matches();
 
