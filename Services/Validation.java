@@ -118,6 +118,35 @@ public class Validation {
             matches = true;
         }
     }
+	
+	 /**
+     * UC5: validating Password of a user with Rule1 - minimum of 8 characters
+     * The pattern should for following conditions Matcher will match pattern
+     * with user input.
+     *
+     * @param user getting user input for matching
+     */
+   
+    public static void getPasswordPattern(User user) {
+        //making boolean false.
+        boolean matches = false;
+
+        // defining pattern and matcher class for validation
+        Pattern pattern = Pattern.compile(("^[a-zA-Z0-9]{8}"));
+        Matcher matcher = pattern.matcher(user.getPassword());
+        matches = matcher.matches();
+
+        // if  user input is false then this will execute.
+        if (matches != true) {
+            System.out.println("Password length should be of 8 characters long .");
+            UserRegistration.getUserInput();
+        } else {
+            System.out.println("User Password is Validated! ");
+            matches = true;
+        }
+    }
+
+}
 
 
 }

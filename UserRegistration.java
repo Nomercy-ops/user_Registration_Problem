@@ -44,6 +44,10 @@ public class UserRegistration {
 		System.out.println("Enter Your Mobile Number: ");
         user.setPhoneNumber(scanner.next());
         Validation.getPhoneNumberPattern(user); //calling validation method.
+		
+		System.out.println("Enter a Password: ");
+        user.setPassword(scanner.next());
+        Validation.getPasswordPattern(user); //calling validation method.
     }
 
     /**
