@@ -68,6 +68,7 @@ public class Validation {
      * UC3: validating Email of a user. This method is used for validating Email
      * of a user by using Regex. In pattern we define email rules like here and
      * Matcher will match pattern with user input.
+     * UC9: valaditing pattern  Email with all sample emails
      *
      * @param user getting user input for matching
      */
@@ -77,7 +78,7 @@ public class Validation {
         boolean matches = false;
 
         // defining pattern and matcher class for validation
-        Pattern pattern = Pattern.compile(("^[a-z]+\\.[a-z]+@+[bl?]{2}+\\.+[co?]{2}+\\.[a-z]{2,6}$"));
+        Pattern pattern = Pattern.compile(("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$"));
         Matcher matcher = pattern.matcher(user.getEmail());
         matches = matcher.matches();
 
