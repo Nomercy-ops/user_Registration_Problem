@@ -32,6 +32,10 @@ public class UserRegistration {
         System.out.println("Enter Your First Name: ");
         user.setFirstName(scanner.next());
         Validation.getFirstNamePattern(user); //calling validation method.
+		
+		System.out.println("Enter Your Last Name: ");
+        user.setLastName(scanner.next());
+        Validation.getLastNamePattern(user); //calling validation method.
     }
 
     /**
