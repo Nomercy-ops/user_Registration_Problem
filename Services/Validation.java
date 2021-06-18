@@ -63,6 +63,33 @@ public class Validation {
             matches = true;
         }
     }
+	
+	 /**
+     * UC3: validating Email of a user. This method is used for validating Email
+     * of a user by using Regex. In pattern we define email rules like here and
+     * Matcher will match pattern with user input.
+     *
+     * @param user getting user input for matching
+     */
+    
+    public static void getEmailPattern(User user) {
+        //making boolean false.
+        boolean matches = false;
+
+        // defining pattern and matcher class for validation
+        Pattern pattern = Pattern.compile(("^[a-z]+\\.[a-z]+@+[bl?]{2}+\\.+[co?]{2}+\\.[a-z]{2,6}$"));
+        Matcher matcher = pattern.matcher(user.getEmail());
+        matches = matcher.matches();
+
+        // if  user input is false then this will execute.
+        if (matches != true) {
+            System.out.println("Email not Valid please input as (abc.xyz@bl.co.in)..");
+            UserRegistration.getUserInput();
+        } else {
+            System.out.println( user.getEmail() + " is Validated! ");
+            matches = true;
+        }
+    }
 
 
 }
