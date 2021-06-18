@@ -90,6 +90,34 @@ public class Validation {
             matches = true;
         }
     }
+	
+	 /**
+     * UC4: validating Phone Number of a user. This method is used for
+     * validating phone number of a user by using Regex. In pattern we define
+     * phone number with country code. and mobile number should contain 10
+     * numbers and Matcher will match pattern with user input.
+     *
+     * @param user getting user input for matching
+     */
+    
+    public static void getPhoneNumberPattern(User user) {
+        //making boolean false.
+        boolean matches = false;
+
+        // defining pattern and matcher class for validation
+        Pattern pattern = Pattern.compile(("^[9?][1?][\\-\\s?][\\d]{10}"));
+        Matcher matcher = pattern.matcher(user.getPhoneNumber());
+        matches = matcher.matches();
+
+        // if  user input is false then this will execute.
+        if (matches != true) {
+            System.out.println("Phone Number format should be(91 9919819801 )");
+            UserRegistration.getUserInput();
+        } else {
+            System.out.println("User " + user.getPhoneNumber()+ " is Validated! ");
+            matches = true;
+        }
+    }
 
 
 }

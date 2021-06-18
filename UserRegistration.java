@@ -40,6 +40,10 @@ public class UserRegistration {
 		System.out.println("Enter Your email: ");
         user.setEmail(scanner.next());
         Validation.getEmailPattern(user); //calling validation method.
+		
+		System.out.println("Enter Your Mobile Number: ");
+        user.setPhoneNumber(scanner.next());
+        Validation.getPhoneNumberPattern(user); //calling validation method.
     }
 
     /**

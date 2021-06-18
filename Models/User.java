@@ -8,7 +8,7 @@ package com.bridgelabz.regex.Models;
 public class User {
     private String firstName;
     private String lastName;
-    private long phoneNumber;
+    private String phoneNumber;
     private String password;
     private String email;
 
@@ -33,11 +33,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
