@@ -1,3 +1,13 @@
+/**
+ *
+ * @author Rikesh Chhetri
+ * @version 1.0
+ * @Created_on: 20.06.21
+ *
+ * purpose: is to write a JUnit test to validate user input and test the program with multiple inputs .
+ *
+ */
+ 
 package com.bridgelabz.regex;
 
 
