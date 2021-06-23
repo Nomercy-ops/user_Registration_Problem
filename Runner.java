@@ -2,11 +2,11 @@
  * *******************************************************************************************
  *
  * <p>
- * Purpose: Determines whether or not n is prime.
+ * Purpose: is to validate user input Lamda functions and regex.
  *
  * @author Rikesh Chhetri
  * @version 1.0
- * @since 18/06/21
+ * @since 23/06/21
  * <p>
  *******************************************************************************************
  */
@@ -17,29 +17,36 @@ import java.util.Scanner;
 public class Runner {
 
     /**
+     * Uc 11: refactor the code for validating user input with lamda functions
      * This Method is used for getting the user input for validation. After
      * getting user input it call the Validation method for pattern matching.
      */
     public static void getUserInput() {
-        UserRegistration users = new UserRegistration();
+
+        // variables for pattern
+        String nameRegex = "^[A-Z]{1}[a-z]{2,}";
+        String emailRegex = "^([a-z]{2,}[0-9a-z]{1,}([_+-.*$#]{0,1}[a-z0-9]{1,}){0,1}[@]{1}[a-z0-1]{1,}[.]{1}[a-z]{2,4}([.]{0,1}[a-z]{2}){0,1})$";
+        String phoneNumberRegex = "^[\\+?][9?][1?][\\s\\-?][\\d]{10}";
+        String passwordRegex = "^(?=.*[@#$%^&+=])(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+        
+        // taking user inputing and calling lamdafunctions for validation.
+        UserRegistration validate = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Your First Name: ");
         String userName = scanner.next();
-        users.validateUserName(userName);
-
-        //        System.out.println("Enter Your Last Name: ");
-        //        user.setName(scanner.next());
-        //        userValidation.getNamePattern(user);
-        ////
-        //        System.out.println("Enter Your email: ");
-        //        user.setEmail(scanner.next());
-        //        Validation.getEmailPattern(user);
-        //          System.out.println("Enter Your Mobile Number: ");
-        //          user.setPhoneNumber(scanner.next());
-        //          Validation.getPhoneNumberPattern(user);
-        //          System.out.println("Enter a Password: ");
-        //          user.setPassword(scanner.next());
-        //          Validation.getPasswordPattern(user);
+        validate.validateUsers(userName, nameRegex);
+        System.out.println("Enter Your Last Name: ");
+        String lastName = scanner.next();
+        validate.validateUsers(lastName, nameRegex);
+        System.out.println("Enter Your email: ");
+        String userMail = scanner.next();
+        validate.validateUsers(userMail, emailRegex);
+        System.out.println("Enter Your Mobile Number: ");
+        String phoneNumber = scanner.next();
+        validate.validateUsers(phoneNumber, phoneNumberRegex);
+        System.out.println("Enter a Password: ");
+        String password = scanner.next();
+        validate.validateUsers(password, passwordRegex);
     }
 
     /**
